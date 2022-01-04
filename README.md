@@ -2,6 +2,19 @@
 
 # INSTALL NOTE: Please delete any old GitHub subdirectory from this repository and definitely the old Geolog Project because we have had some major changes in the workflow with the addtion of the handling of the Thomeer parameters and FWL Search rountine. To install the Geolog project, delete the old ArabD_GitHub Geolog project, unzip the project in this repository and copy this 'new and improved' version of the Geolog project to your PG_PROJECTS location.
 
+#### You will also need to be able to load the following python libraries installed in your Geolog PG_PYTHON_EXE site area:
+import geolog
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+from pandas import DataFrame, read_csv
+import altair as alt
+import altair_transform
+alt.renderers.enable('altair_viewer')
+alt.data_transformers.disable_max_rows()
+
+
 Geolog has always been found to be a user-friendly Petrophysical software tool that allows us to load, interrogate, process and display well log and production data. With the introduction of Geolog18, we can also use python code in our Geolog loglans to push the analysis even further.  Geolog python loglans can exploit state-of-the-art techniques in python to interrogate and build probabilistic methods to estimate additional well log curves, core analysis results, rock types, facies, engineering parameters and petrophysical properties.  
 
 In this repository we include a comprehensive Geolog project with Geolog python loglans, data and one well to utilize a proven workflow to interrogate and characterize a typical Arab D carbonate reservoir in the project well. This example serves as the basis for a full-field reservoir characterization workflow for all wells throughout the entire field. In this example we are showing the results for just one well, but in the full-field reservoir characterization we would follow the same workflow and generate the same results for all wells run in batch mode for all wells. The final objective would be to use these well data results and create a 3D static model of porosity, permeability, Petrophysical Rock Types (PRT), capillary pressure parameters and saturations. Typically this static model would be used to initialize the dynamic model in reservoir simulation. 
