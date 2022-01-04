@@ -3,16 +3,16 @@
 # INSTALL NOTE: Please delete any old GitHub subdirectory from this repository and definitely the old Geolog Project because we have had some major changes in the workflow with the addtion of the handling of the Thomeer parameters and FWL Search rountine. To install the Geolog project, delete the old ArabD_GitHub Geolog project, unzip the project in this repository and copy this 'new and improved' version of the Geolog project to your PG_PROJECTS location.
 
 #### You will also need to be able to load the following python libraries installed in your Geolog PG_PYTHON_EXE site area:
-import geolog
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import math
-from pandas import DataFrame, read_csv
-import altair as alt
-import altair_transform
-alt.renderers.enable('altair_viewer')
-alt.data_transformers.disable_max_rows()
+- import geolog
+- import pandas as pd
+- import numpy as np
+- import matplotlib.pyplot as plt
+- import math
+- from pandas import DataFrame, read_csv
+- import altair as alt
+- import altair_transform
+- alt.renderers.enable('altair_viewer')
+- alt.data_transformers.disable_max_rows()
 
 
 Geolog has always been found to be a user-friendly Petrophysical software tool that allows us to load, interrogate, process and display well log and production data. With the introduction of Geolog18, we can also use python code in our Geolog loglans to push the analysis even further.  Geolog python loglans can exploit state-of-the-art techniques in python to interrogate and build probabilistic methods to estimate additional well log curves, core analysis results, rock types, facies, engineering parameters and petrophysical properties.  
