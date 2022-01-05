@@ -70,14 +70,12 @@ Please find below an example of the output.
 	
 		perm_knn.pysh
 
-4) Using the kNN estimated permeability and calculated Total Porosity (PHIT) from MultiMin, we query Clerke’s Rosetta Stone core database to predict the Thomeer parameters;
+4) Using the kNN estimated permeability and calculated Total Porosity (PHIT) from MultiMin, we query Clerke’s Rosetta Stone core database to predict the Thomeer Capillary Pressure parameters (Pdi, Gi and BVocci) for each pore system i over the reservoir interval;
 
 		thomeer_parameters.pysh
 
  and a python loglan to predict the following Petrophysical Rock Types (PRT) also using kNN:
 - Petrophysical Rock Types (PRT) as defined by Clerke (M_1 Macro/Meso, M_2 Macro/Micro, M_1_2 Macro/Meso/Micro, Type1 Meso, Type 1_1 Meso/Micro and Type 2 Micro PRTs.
-- Thomeer Capillary Pressure parameters (Pdi, Gi and BVocci) for each pore system i over the reservoir interval
-
 		thomeer_prt.pysh
 
 ![Geolog_Image](Thomeer_output.png)
