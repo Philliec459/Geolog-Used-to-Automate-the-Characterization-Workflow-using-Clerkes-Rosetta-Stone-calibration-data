@@ -1,6 +1,6 @@
 # Geolog used to automate the Carbonate characterization workflow using Clerke’s Arab D Rosetta Stone calibration data. This technique provides for a full pore system characterization with modeled Capillary Pressure saturations for an Arab D complex carbonate reservoir.
 
-# INSTALL NOTE: Please delete any old GitHub subdirectory from this repository and definitely the old Geolog Project because we have had some major changes in the workflow with the addition of the handling of the Thomeer parameters and FWL Search routine. To install the Geolog project, delete the old ArabD_GitHub Geolog project, unzip the project in this repository and copy this 'new and improved' version of the Geolog project to your PG_PROJECTS location.
+### INSTALL NOTE: Please delete any old GitHub subdirectory from this repository and definitely the old Geolog Project because we have had some major changes in the workflow with the addition of the handling of the Thomeer parameters and FWL Search routine. To install the Geolog project, delete the old ArabD_GitHub Geolog project, unzip the project in this repository and copy this 'new and improved' version of the Geolog project to your PG_PROJECTS location.
 
 #### You will also need to have loaded the following python libraries installed in your Geolog PG_PYTHON_EXE site area:
 - import geolog
@@ -15,20 +15,20 @@
 - alt.data_transformers.disable_max_rows()
 
 ## Introduction:
-Geolog has always been found to be a user-friendly Petrophysical software tool that allows us to load, interrogate, process and display well log and production data. With the introduction of Geolog18, we can also use python code in our Geolog loglans to push the analysis even further.  Geolog python loglans can exploit state-of-the-art techniques in python to interrogate and build probabilistic methods to estimate additional well log curves, core analysis results, rock types, facies, engineering parameters and petrophysical properties.  
+Geolog has always been found to be a user-friendly Petrophysical software tool that allows the users to load, interrogate, process and display well log and production data with ease. With the introduction of Geolog18.0 (now Geolog21.0), we can also use python code in our Geolog loglans to push the analysis even further. Geolog python loglans can exploit state-of-the-art methods in python to interrogate and build probabilistic techniques to estimate additional well log results and calibrate to core analysis results, rock types, facies, engineering parameters and petrophysical properties.  
 
-In this repository we include a comprehensive Geolog project with Geolog python loglans, data and one well to utilize a proven workflow to interrogate and characterize a typical Arab D carbonate reservoir in the project well. This example serves as the basis for a full-field reservoir characterization workflow for all wells throughout the entire field. In this example we are showing the results for just one well, but in the full-field reservoir characterization we would follow the same workflow and generate the same results for all wells run in batch mode for all wells. The final objective would be to use these well data results and create a 3D static model of porosity, permeability, Petrophysical Rock Types (PRT), capillary pressure parameters and saturations. Typically, this static model would be used to initialize the dynamic model in reservoir simulation. 
+In this repository we include a comprehensive Geolog project primarily using Geolog python loglans. We supply an example well to utilize a proven workflow to interrogate and characterize a typical Arab D carbonate reservoir. This example serves as the basis for a full-field reservoir characterization workflow that would be used on all wells throughout the entire field. In this example we are showing the results for just one well, but in the full-field reservoir characterization we would follow the same workflow and generate the same results for all wells in the field. The final objective would be to use these well data results and create a 3D static model of the reservoir using the porosity, permeability, Petrophysical Rock Types (PRT), capillary pressure parameters and saturations determined in this workflow. Typically, this static model would then be used to initialize the dynamic model for reservoir simulation. 
 
 ![Geolog_Image](Results.png)
 
-This project demonstrates tried and proven workflow with the techniques as described by Phillips(1) et al. used in the characterization of most Arab D reservoirs in Saudi Arabia. Permeability, Petrophysical Rock Types (PRT), Capillary Pressure and modeled saturations are all estimated or calculated in this workflow in order to characterize this complex carbonate reservoir. Clerke’s(2) Arab D Rosetta Stone core analysis database is used as the calibration data. 
+This project demonstrates tried and proven workflow with the techniques as described by Phillips(1) et al. used in the characterization of most Arab D reservoirs in Saudi Arabia. Permeability, Petrophysical Rock Types (PRT), Capillary Pressure and modeled saturations are all estimated or calculated in this workflow using the new python loglans in order to characterize this complex carbonate reservoir. Clerke’s(2) Arab D Rosetta Stone core analysis database is used as the calibration data. 
 
-These calibration data are from Ed Clerke’s Rosetta Stone, Arab-D carbonate dataset from Ghawar field in Saudi Arabia. This is a very special carbonate dataset. Clerke randomly selected the final calibration samples from 1,000’s of core plugs for the final dataset.  The Rosetta Stone data cover the full range in poro-perm space and Petrophysical Rock Types (PRTs) observed in the Arab D reservoir. For each sample Clerke acquired High Pressure Mercury Injection (HPMI) and fit the capillary pressure curves using a Thomeer hyperbola (see Altair Plot of Capillary Pressure curves) created from the Initial Displacement Pressure (Pdi), Pc curvature term Gi that relates to the variability of pore throats and Bulk Volume Occupied (BVocci) that is related to the Pore Volume for each pore system i.  From the results Clerke defined his Petrophysical Rock Types (PRT). For this Arab D reservoir, most PRTs have a dual-porosity system, and some PRTs have up to 3 pore systems. 
+These calibration data are from Ed Clerke’s Rosetta Stone, Arab-D carbonate dataset from Ghawar field in Saudi Arabia. This is a very special carbonate dataset. Clerke randomly selected the final calibration samples from 1,000’s of core plugs for the final dataset.  The Rosetta Stone data cover the full range in poro-perm space and Petrophysical Rock Types (PRTs) observed in the Arab D reservoir. For each sample Clerke acquired High Pressure Mercury Injection (HPMI) and fit the capillary pressure curves to the Thomeer hyperbola (see Altair Plot of Capillary Pressure curves) created from the Initial Displacement Pressure (Pdi), curvature term Gi that relates to the variability of pore throats and Bulk Volume Occupied (BVocci) that is related to the Pore Volume for each pore system i.  From the results Clerke defined his Petrophysical Rock Types (PRT). For this Arab D reservoir, most PRTs have a dual-porosity system, and some PRTs have up to 3 pore systems. 
 
 ## Suggested Arab D Carbonate Workflow:
 The following workflow is suggested to interrogate, process, interpret and model the petrophysical properties of a typical Arab D carbonate reservoir using Clerke’s Arab D Rosetta Stone Carbonate database as calibration. The workflow consists of the following steps:
 
-1) Interrogate the Well Log data and Rosetta Stone calibration data using standard Geolog layouts, cross plots and histograms and then use a python loglan featuring Altair, which is interactive software driven from a Geolog Module Launcher.
+1) We can interrogate both the Well Log data and Rosetta Stone calibration data using standard Geolog layouts, cross plots and histograms or we can use a python loglan featuring Altair, which is very interactive python software library driven from a Geolog Module Launcher. With Altair you can build the layout of your choice using depth plots, cross plots or histograms, where they are all interactive and dynamically linked.
 
 ### Altair Used to Interrogate the Well log data in Geolog:
 ![Geolog_Image](Geolog20_ArabD.gif)
@@ -40,15 +40,15 @@ The following workflow is suggested to interrogate, process, interpret and model
 
 		altair_thoreer_parameters.pysh
 
-2) Run MultiMin for a solid log analysis model using the typical minerals found in the Arab D reservoir; Limestone, Dolomite, Anhydrite and Illite. With MultiMin we always use environmentally corrected log data and use the calculated uncertainties for each log curve employed in the analysis. 
+2) Typically, we run MultiMin for a solid log analysis model using the minerals found in the Arab D reservoir; Limestone, Dolomite, Anhydrite with Illite. Having learned MultiMin from Stepehen Cheshire, the author of MultiMifn, we always use environmentally corrected log data and use  calculated uncertainties for each log curve employed in the analysis. Stephen called this the 'Rifle Drill' approach to MultiMin.
 
-To serve as an example we have created a python loglan that utilizes Scipy Optimize to estimate lithology:
+We cannot show the MultiMin code for Optimization; but to serve as an example, we have created a python loglan that utilizes Scipy Optimize to estimate lithology:
 
    		optimize_lith.pysh 
     
-This loglan first uses digitized chartbook data as the basis for our kNN Porosity (PHIT) and Rho Matrix density calculations used in the analysis. Once we estimate PHIT, we then use Scipy Optimize (minimize) to estimate our carbonate lithology. 
+This loglan first uses digitized chartbook data as the basis for our kNN Porosity (PHIT) and Rho Matrix density calculations used in this analysis. Once PHIT is estimated, then we then use Scipy Optimize (minimize) to optimize on our carbonate lithology. 
 
-Our primary function is the following in Scipy trying to estimate volumes of Calcite and Dolomite.
+The primary function employed in Scipy is shown below. It is trying to estimate volumes of Calcite and Dolomite.
 
 	fun = lambda x: (RHOB2 - (2.52*vol_illite + 2.71*x[0]+2.847*x[1]+PHIT*FD)) + (TNPH - (0.247*vol_illite + 0*x[0]+0.005*x[1]+PHIT*1))
 
@@ -58,23 +58,23 @@ Which is using two log response functions that are to be minimized:
 
 	TNPH_theoretical =  0.247*vol_illite + 0*x[0]+0.005*x[1]+PHIT*1
 
-where res.x[0] = VOL_CALCITE and res.x[1] = VOL_DOLO. The objective is to minimize the difference between RHOB - RHOB_theoretical and TNPH - TNPH_theoretical while solving for our lithology. Please consider this still work in progress. There is much to learn on python Optimization. 
+where res.x[0] = VOL_CALCITE and res.x[1] = VOL_DOLO. The objective is to minimize the difference between **RHOB - RHOB_theoretical** and **TNPH - TNPH_theoretical** while solving for lithology. Please consider this work in progress. We have much to learn on python Optimization. 
 
-We would like to thank Andy McDonald and his Petrophysics Python Series for his examples and in particular we are using his hatch fill example in our optimization loglan.
+We would like to thank Andy McDonald and for the great ideas that come from his Petrophysics Python Series. We are using his hatch fill example in our optimization loglan depth plots. 
 
-Please find below an example of the output.
+Please find below an example of the Scipy optimization output.
 
 ![Geolog_Image](Optimize_lith_Geolog.png)
 
-3) Use available core data from the representative reservoir/field to build a petrophysical model to estimate permeability for all wells in field using our python loglan of kNN using normalized input data and weighted by Euclidean distances for each of the nearest neighbors. 
+3) Use available core calibration data from the representative reservoir/field to build a petrophysical model to estimate permeability from our python loglan using kNN. We are using normalized input data that is weighted by Euclidean distances for each of the nearest neighbors to make our estimation using this python loglan:
 	
 		perm_knn.pysh
 
-4) Using the kNN estimated permeability and calculated Total Porosity (PHIT) from MultiMin, we query Clerke’s Rosetta Stone core database to predict the Thomeer Capillary Pressure parameters (Pdi, Gi and BVocci) for each pore system i over the reservoir interval;
+4) Using the kNN estimated permeability and calculated Total Porosity (PHIT) from our optimization, we query Clerke’s Rosetta Stone core database to predict the Thomeer Capillary Pressure parameters (Pdi, Gi and BVocci) for each pore system i over the reservoir interval using this loglan;
 
 		thomeer_parameters.pysh
 
- and a python loglan to predict the following Petrophysical Rock Types (PRT) also using kNN to predict the Petrophysical Rock Types (PRT) as defined by Clerke:
+ We also use a python loglan to predict the following Petrophysical Rock Types (PRT) also using kNN as defined by Clerke:
 - M_1 Macro/Meso
 - M_2 Macro/Micro
 - M_1_2 Macro/Meso/Micro
@@ -86,10 +86,10 @@ Please find below an example of the output.
 
 ![Geolog_Image](Thomeer_output.png)
 
-5) Use the Thomeer Capillary Pressure parameters to model saturations based on the buoyancy due to fluid density differences at the height above the Free Water Level (FWL). In this instance we compare the Bulk Volume Oil (BVO) from MultiMin vs. BVO from Thomeer-based capillary pressure saturations since BVO is pore volume weighted. 
+5) We use the Thomeer Capillary Pressure parameters that we estimated over the entire reservoir interval to model saturations based on the buoyancy due to reservoir fluid density differences at each height above the Free Water Level (FWL). We usually compare the Bulk Volume Oil (BVO) from MultiMin vs. BVO from Thomeer-based capillary pressure saturations since BVO is pore volume weighted to test our results. 
 
 #### Free Water Level Search:
-We have provided a FWL Search technique in python too to estimate the FWL elevation (TVDss) in each key well to be used to create a FWL plane for the field. 
+We have provided a FWL Search routine in python too to estimate the FWL elevation (TVDss) in our example well. We typically use this on each key well in the field to create a FWL plane for the field. 
 
 		fwl_search.pysh
 
@@ -105,11 +105,11 @@ It should be noted, that not all FWL surfaces are flat. Structural tilting, subd
 
 ![Geolog_Image](FWLSearch.png)
 
-We then estimate the Thomeer Capillary Pressure BVO using the FWL Search results and
+Finally, we estimate the Thomeer Capillary Pressure BVO using the FWL Search results and
 
 		thomeer_pc_sats.phsy
 
-to calculate our final estimate of BVO using Capillary Pressure data. 
+to calculate our final estimate of BVO from Capillary Pressure data. 
 
 6) As a secondary technique to estimate PRTs, we also tested another applications in Geolog employing python’s Sklearn as published by Hall(3). We could have estimated Depositions of Environment or other types of categoric geologic facies used in this Sklearn prediction process. There is also a GitHub repository containing the Jupyter Notebook at the following link to use as a help file to understand the process and set model parameters: 
 
