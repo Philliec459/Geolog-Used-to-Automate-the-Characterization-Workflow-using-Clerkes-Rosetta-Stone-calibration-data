@@ -30,17 +30,21 @@ The following workflow and processing is suggested to interrogate, process, inte
 
 1) Interrogate the Well Log data and Rosetta Stone calibration data using standard Geolog layouts, cross plots and histograms and then use a python loglan featuring Altair, which is interactive software driven from a Geolog Module Launcher.
 
+### Altair Used to Interrogate the Well log data in Geolog:
+![Geolog_Image](Geolog20_ArabD.gif)
+
+	alt_logs.pysh
+
 ### Altair used to Interrogate the Rosetta Stone Thomeer Capillary Pressure curves and Petrophysical Rock Types (PRTs):
 ![Geolog_Image](Thomeer_Pc_and_Thomeer_Parameters2.gif)
 
-### Altair Used to Interrogate the Well log data in Geolog:
-![Geolog_Image](Geolog20_ArabD.gif)
+	altair_thoreer_parameters.pysh
 
 2) Run MultiMin for a solid log analysis model using the typical minerals found in the Arab D reservoir; Limestone, Dolomite, Anhydrite and Illite. With MultiMin we always use environmentally corrected log data and use the calculated uncertainties for each log curve employed in the analysis. 
 
 To serve as an example we have created a python loglan that utilizes Scipy Optimize to estimate lithology:
 
-    optimize_lith.pysh 
+   	optimize_lith.pysh 
     
 This loglan first uses digitized chartbook data as the basis for our kNN Porosity (PHIT) and Rho Matrix density calculations used in the analysis. Once we estimate PHIT, we then use Scipy Optimize (minimize) to estimate our carbonate lithology. 
 
@@ -63,17 +67,29 @@ Please find below an example of the output.
 ![Geolog_Image](Optimize_lith_Geolog.png)
 
 3) Use available core data from the representative reservoir/field to build a petrophysical model to estimate permeability for all wells in field using our python loglan of kNN using normalized input data and weighted by Euclidean distances for each of the nearest neighbors. 
+	
+	perm_knn.pysh
 
-4) Using the kNN estimated permeability and calculated Total Porosity (PHIT) from MultiMin, we query Clerke’s Rosetta Stone core database to predict the Thomeer parameters and a python loglan to predict the following Petrophysical results also using kNN:
+4) Using the kNN estimated permeability and calculated Total Porosity (PHIT) from MultiMin, we query Clerke’s Rosetta Stone core database to predict the Thomeer parameters;
+
+	thomeer_parameters.pysh
+
+ and a python loglan to predict the following Petrophysical Rock Types (PRT) also using kNN:
     - Petrophysical Rock Types (PRT) as defined by Clerke (M_1 Macro/Meso, M_2 Macro/Micro, M_1_2 Macro/Meso/Micro, Type1 Meso, Type 1_1 Meso/Micro and Type 2 Micro PRTs.
     - Thomeer Capillary Pressure parameters (Pdi, Gi and BVocci) for each pore system i over the reservoir interval
+
+	thomeer_prt.pysh
 
 ![Geolog_Image](Thomeer_output.png)
 
 5) Use the Thomeer Capillary Pressure parameters to model saturations based on the buoyancy due to fluid density differences at the height above the Free Water Level (FWL). In this instance we compare the Bulk Volume Oil (BVO) from MultiMin vs. BVO from Thomeer-based capillary pressure saturations since BVO is pore volume weighted. 
 
 #### Free Water Level Search:
-We have provided a FWL Search technique in python too to estimate the FWL elevation (TVDss) in each key well to be used to create a FWL plane for the field. To model Capillary Pressure saturations, it is essential to have a proper Free Water Level (FWL). Reservoir Capillary Pressure or buoyancy is dependent upon the height above the FWL. 
+We have provided a FWL Search technique in python too to estimate the FWL elevation (TVDss) in each key well to be used to create a FWL plane for the field. 
+
+	fwl_search.pysh
+
+To model Capillary Pressure saturations, it is essential to have a proper Free Water Level (FWL). Reservoir Capillary Pressure or buoyancy is dependent upon the height above the FWL. 
 
 On new discoveries the FWL is usually determined from Formation Test data plotting the pressure data vs. TVDss to find the intersection of the water gradient vs. hydrocarbon gradient. The elevation of this intersection is the FWL or zero Capillary Pressure. However, on older fields, this type of data is typically not available prior to pressure depletion and/or fluid contact movements in the field. Therefore, we need another way to estimate the FWL for the field. In the python software used in our Notebook we offer a FWL search technique that has been shown to work very well in numerous fields.
 
@@ -84,6 +100,12 @@ The FWL search is usually run on all wells with a fwl_est for each well. In many
 It should be noted, that not all FWL surfaces are flat. Structural tilting, subduction, and dynamic aquifers... can result in a tilted FWL elevations with the possibility of residual oil below the FWL, depending in the situation. 
 
 ![Geolog_Image](FWLSearch.png)
+
+We then estimate the Thomeer Capillary Pressure BVO using the FWL Search results and
+
+	thomeer_pc_sats.phsy
+
+to calculate our final estimatge of BVO using Capillary Pressure data. 
 
 6) As a secondary technique to estimate PRTs, we also tested another applications in Geolog employing python’s Sklearn as published by Hall(3). We could have estimated Depositions of Environment or other types of categoric geologic facies used in this Sklearn prediction process. There is also a GitHub repository containing the Jypyter Notebook at the following link to use as a help file to understand the process and set model parameters: 
 
