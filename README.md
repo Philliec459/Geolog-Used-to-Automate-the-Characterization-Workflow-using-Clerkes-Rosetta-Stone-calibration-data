@@ -70,7 +70,11 @@ Please find below an example of the output.
 
 ![Geolog_Image](Thomeer_output.png)
 
-5) Use the Thomeer Capillary Pressure parameters to model saturations based on the buoyancy due to fluid density differences at the height above the Free Water Level (FWL). In this instance we compare the Bulk Volume Oil (BVO) from MultiMin vs. BVO from Thomeer-based capillary pressure saturations since BVO is pore volume weighted. We offer a python loglan to estimate the Free Water Level (FWL) too by comparing the Bulk Volume Oil (BVO) from logs vs. the BVO from Capillary Pressure over a range of potential FWL elevations till we mimimize the error between the two BVO calculations. The final FWL search result with the minimum error is used as the final FWL for our Capillary Pressure saturations. 
+5) Use the Thomeer Capillary Pressure parameters to model saturations based on the buoyancy due to fluid density differences at the height above the Free Water Level (FWL). In this instance we compare the Bulk Volume Oil (BVO) from MultiMin vs. BVO from Thomeer-based capillary pressure saturations since BVO is pore volume weighted. 
+
+We also offer a python loglan to estimate the Free Water Level (FWL) too by comparing the Bulk Volume Oil (BVO) from logs vs. the BVO from Capillary Pressure over a range of potential FWL elevations till we mimimize the error between the two BVO calculations. The final FWL search result with the minimum error is used as the final FWL for our Capillary Pressure saturations. 
+
+![Geolog_Image](FWLSearch.png)
 
 6) As a secondary technique to estimate PRTs, we also tested another applications in Geolog employing python’s Sklearn as published by Hall(3). We could have estimated Depositions of Environment or other types of categoric geologic facies used in this Sklearn prediction process. There is also a GitHub repository containing the Jypyter Notebook at the following link to use as a help file to understand the process and set model parameters: 
 
