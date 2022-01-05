@@ -19,7 +19,7 @@ Geolog has always been found to be a user-friendly Petrophysical software tool t
 
 In this repository we include a comprehensive Geolog project primarily using Geolog python loglans. We supply an example well to utilize a proven workflow to interrogate and characterize a typical Arab D carbonate reservoir. This example serves as the basis for a full-field reservoir characterization workflow that would be used on all wells throughout the entire field. In this example we are showing the results for just one well, but in the full-field reservoir characterization we would follow the same workflow and generate the same results for all wells in the field. The final objective would be to use these well data results and create a 3D static model of the reservoir using the porosity, permeability, Petrophysical Rock Types (PRT), capillary pressure parameters and saturations determined in this workflow. Typically, this static model would then be used to initialize the dynamic model for reservoir simulation. 
 
-![Geolog_Image](Results.png)
+![Geolog_Image](co3_workflow3.gif)
 
 This project demonstrates tried and proven workflow with the techniques as described by Phillips(1) et al. used in the characterization of most Arab D reservoirs in Saudi Arabia. Permeability, Petrophysical Rock Types (PRT), Capillary Pressure and modeled saturations are all estimated or calculated in this workflow using the new python loglans in order to characterize this complex carbonate reservoir. Clerke’s(2) Arab D Rosetta Stone core analysis database is used as the calibration data. 
 
