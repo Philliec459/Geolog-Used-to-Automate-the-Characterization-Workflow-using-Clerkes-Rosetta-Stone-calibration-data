@@ -33,18 +33,18 @@ The following workflow and processing is suggested to interrogate, process, inte
 ### Altair Used to Interrogate the Well log data in Geolog:
 ![Geolog_Image](Geolog20_ArabD.gif)
 
-	alt_logs.pysh
+		alt_logs.pysh
 
 ### Altair used to Interrogate the Rosetta Stone Thomeer Capillary Pressure curves and Petrophysical Rock Types (PRTs):
 ![Geolog_Image](Thomeer_Pc_and_Thomeer_Parameters2.gif)
 
-	altair_thoreer_parameters.pysh
+		altair_thoreer_parameters.pysh
 
 2) Run MultiMin for a solid log analysis model using the typical minerals found in the Arab D reservoir; Limestone, Dolomite, Anhydrite and Illite. With MultiMin we always use environmentally corrected log data and use the calculated uncertainties for each log curve employed in the analysis. 
 
 To serve as an example we have created a python loglan that utilizes Scipy Optimize to estimate lithology:
 
-   	optimize_lith.pysh 
+   		optimize_lith.pysh 
     
 This loglan first uses digitized chartbook data as the basis for our kNN Porosity (PHIT) and Rho Matrix density calculations used in the analysis. Once we estimate PHIT, we then use Scipy Optimize (minimize) to estimate our carbonate lithology. 
 
@@ -68,17 +68,17 @@ Please find below an example of the output.
 
 3) Use available core data from the representative reservoir/field to build a petrophysical model to estimate permeability for all wells in field using our python loglan of kNN using normalized input data and weighted by Euclidean distances for each of the nearest neighbors. 
 	
-	perm_knn.pysh
+		perm_knn.pysh
 
 4) Using the kNN estimated permeability and calculated Total Porosity (PHIT) from MultiMin, we query Clerke’s Rosetta Stone core database to predict the Thomeer parameters;
 
-	thomeer_parameters.pysh
+		thomeer_parameters.pysh
 
  and a python loglan to predict the following Petrophysical Rock Types (PRT) also using kNN:
     - Petrophysical Rock Types (PRT) as defined by Clerke (M_1 Macro/Meso, M_2 Macro/Micro, M_1_2 Macro/Meso/Micro, Type1 Meso, Type 1_1 Meso/Micro and Type 2 Micro PRTs.
     - Thomeer Capillary Pressure parameters (Pdi, Gi and BVocci) for each pore system i over the reservoir interval
 
-	thomeer_prt.pysh
+		thomeer_prt.pysh
 
 ![Geolog_Image](Thomeer_output.png)
 
@@ -87,7 +87,7 @@ Please find below an example of the output.
 #### Free Water Level Search:
 We have provided a FWL Search technique in python too to estimate the FWL elevation (TVDss) in each key well to be used to create a FWL plane for the field. 
 
-	fwl_search.pysh
+		fwl_search.pysh
 
 To model Capillary Pressure saturations, it is essential to have a proper Free Water Level (FWL). Reservoir Capillary Pressure or buoyancy is dependent upon the height above the FWL. 
 
@@ -103,7 +103,7 @@ It should be noted, that not all FWL surfaces are flat. Structural tilting, subd
 
 We then estimate the Thomeer Capillary Pressure BVO using the FWL Search results and
 
-	thomeer_pc_sats.phsy
+		thomeer_pc_sats.phsy
 
 to calculate our final estimatge of BVO using Capillary Pressure data. 
 
