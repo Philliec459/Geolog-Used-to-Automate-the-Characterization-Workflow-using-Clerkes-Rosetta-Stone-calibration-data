@@ -74,8 +74,14 @@ Please find below an example of the output.
 
 		thomeer_parameters.pysh
 
- and a python loglan to predict the following Petrophysical Rock Types (PRT) also using kNN:
-- Petrophysical Rock Types (PRT) as defined by Clerke (M_1 Macro/Meso, M_2 Macro/Micro, M_1_2 Macro/Meso/Micro, Type1 Meso, Type 1_1 Meso/Micro and Type 2 Micro PRTs.
+ and a python loglan to predict the following Petrophysical Rock Types (PRT) also using kNN to preduct the Petrophysical Rock Types (PRT) as defined by Clerke:
+- M_1 Macro/Meso
+- M_2 Macro/Micro
+- M_1_2 Macro/Meso/Micro
+- Type1 Meso
+- Type 1_1 Meso/Micro
+- Type 2 Micro PRTs
+
 		thomeer_prt.pysh
 
 ![Geolog_Image](Thomeer_output.png)
