@@ -19,7 +19,7 @@ Geolog has always been found to be a user-friendly Petrophysical software tool t
 
 In this repository we include a comprehensive Geolog project primarily using Geolog python loglans. We supply an example well to utilize a proven workflow to interrogate and characterize a typical Arab D carbonate reservoir. This example serves as the basis for a full-field reservoir characterization workflow that would be used on all wells throughout the entire field. In this example we are showing the results for just one well, but in the full-field reservoir characterization we would follow the same workflow and generate the same results for all wells in the field. The final objective would be to use these well data results and create a 3D static model of the reservoir using the porosity, permeability, Petrophysical Rock Types (PRT), capillary pressure parameters and saturations determined in this workflow. Typically, this static model would then be used to initialize the dynamic model for reservoir simulation. 
 
-![Geolog_Image](co3_workflow3_full.gif)
+>![Geolog_Image](co3_workflow3_full.gif)
 
 This project demonstrates tried and proven workflow with the techniques as described by Phillips(1) et al. used in the characterization of most Arab D reservoirs in Saudi Arabia. Permeability, Petrophysical Rock Types (PRT), Capillary Pressure and modeled saturations are all estimated or calculated in this workflow using the new python loglans in order to characterize this complex carbonate reservoir. Clerke’s(2) Arab D Rosetta Stone core analysis database is used as the calibration data. 
 
@@ -31,7 +31,7 @@ The following workflow is suggested to interrogate, process, interpret and model
 1) We can interrogate both the Well Log data and Rosetta Stone calibration data using standard Geolog layouts, cross plots and histograms or we can use a python loglan featuring Altair, which is very interactive python software library driven from a Geolog Module Launcher. With Altair you can build the layout of your choice using depth plots, cross plots or histograms, where they are all interactive and dynamically linked.
 
 ### Altair Used to Interrogate the Well log data in Geolog:
-![Geolog_Image](Geolog20_ArabD.gif)
+>![Geolog_Image](Geolog20_ArabD.gif)
 
 		alt_logs.pysh
 
@@ -64,7 +64,7 @@ We would like to thank Andy McDonald and for the great ideas that come from his 
 
 Please find below an example of the Scipy optimization output.
 
-![Geolog_Image](Optimize_lith_Geolog.png)
+>![Geolog_Image](Optimize_lith_Geolog.png)
 
 3) Use available core calibration data from the representative reservoir/field to build a petrophysical model to estimate permeability from our python loglan using kNN. We are using normalized input data that is weighted by Euclidean distances for each of the nearest neighbors to make our estimation using this python loglan:
 	
@@ -84,7 +84,7 @@ Please find below an example of the Scipy optimization output.
 
 		thomeer_prt.pysh
 
-![Geolog_Image](Thomeer_output.png)
+>![Geolog_Image](Thomeer_output.png)
 
 5) We use the Thomeer Capillary Pressure parameters that we estimated over the entire reservoir interval to model saturations based on the buoyancy due to reservoir fluid density differences at each height above the Free Water Level (FWL). We usually compare the Bulk Volume Oil (BVO) from MultiMin vs. BVO from Thomeer-based capillary pressure saturations since BVO is pore volume weighted to test our results. 
 
@@ -103,7 +103,7 @@ The FWL search is usually run on all wells with a fwl_est for each well. In many
 
 It should be noted, that not all FWL surfaces are flat. Structural tilting, subduction, and dynamic aquifers... can result in a tilted FWL elevations with the possibility of residual oil below the FWL, depending in the situation. 
 
-![Geolog_Image](FWLSearch.png)
+>![Geolog_Image](FWLSearch.png)
 
 Finally, we estimate the Thomeer Capillary Pressure BVO using the FWL Search results and
 
@@ -117,7 +117,7 @@ https://github.com/Philliec459/SKLEARN-used-to-predict-Petrophysical-Rock-Types-
 
 The same data used in Geolog can be evaluated within this Jupyter Notebook using Seaborn matrix plots, various types of a Confusion Matrix plots and the pick the SVM model C and gamma parameters from the Heat Map shown below. However, be sure to input the C_REG and GAMMA values in the Geolog python loglan using the most accurate C and gamma combination presented from the Heat Map.
 
-![Geolog_Image](evaluate.png)
+>![Geolog_Image](evaluate.png)
 
 ## RESOURCES:
 https://www.pdgm.com/products/geolog/
