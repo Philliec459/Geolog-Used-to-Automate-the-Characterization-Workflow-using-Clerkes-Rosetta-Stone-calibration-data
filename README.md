@@ -36,7 +36,7 @@ The following workflow is suggested to interrogate, process, interpret and model
 		alt_logs.pysh
 
 ### Altair used to Interrogate the Rosetta Stone Thomeer Capillary Pressure curves and Petrophysical Rock Types (PRTs):
-![Geolog_Image](Thomeer_Pc_and_Thomeer_Parameters2.gif)
+>![Geolog_Image](Thomeer_Pc_and_Thomeer_Parameters2.gif)
 
 		altair_thoreer_parameters.pysh
 
